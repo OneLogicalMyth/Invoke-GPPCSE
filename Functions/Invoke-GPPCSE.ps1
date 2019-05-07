@@ -101,13 +101,14 @@
 
             if($Passwords)
             {
-                foreach($Password in $Passwords)
+                foreach($Pass in $Passwords)
                 {
+                    
                     $Result = '' | Select-Object GPPType, GPPUsername, GPPNewUsername, GPPPassword, GPOPath, GPOName, GPOGUID, GPOLinkedOUs, GPOAssociatedOUs, GPOStatus, RelatedActiveComputers
-                    $Result.GPPType = $Password.Type
-                    $Result.GPPUsername = $Password.Username
-                    $Result.GPPNewUsername = $Password.NewName
-                    $Result.GPPPassword = $(Get-DecryptedCpassword $Password.cPassword)
+                    $Result.GPPType = $Pass.Type
+                    $Result.GPPUsername = $Pass.Username
+                    $Result.GPPNewUsername = $Pass.NewName
+                    $Result.GPPPassword = $(Get-DecryptedCpassword $Pass.cPassword)
                     $Result.GPOPath = $GPOPath
                     $Result.GPOName = $GPO.Properties['displayname'][0]
                     $Result.GPOGUID = $GPO.Properties['name'][0]
