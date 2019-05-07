@@ -2,7 +2,6 @@
 function Get-DecryptedCpassword {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
         [string] $Cpassword 
     )
 

@@ -1,7 +1,6 @@
 Function Get-GPPData {
     [CmdletBinding()]
     param(
-        [Parameter(mandatory=$true)]
         [System.IO.FileInfo] $GPPFile
         )
 

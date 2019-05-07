@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+	body {
+			font-family: "Helvetica Neue", Arial, sans-serif;
+		}
+	div {
+			border: 2px solid;
+			border-radius: 5px;
+			width: 80%;
+			margin:0 auto;
+			padding: 10px;
+		}
+	h1 {
+			width: 80%;
+			margin:0 auto;
+			padding: 10px;
+		}
+	table {
+	  font-size: 14px;
+	  border-collapse: collapse;
+	}
+
+	td, th {
+	  padding: 10px;
+	  text-align: left;
+	  margin: 0;
+	}
+
+	tbody tr:nth-child(2n){
+	  background-color: #eee;
+	}
+
+	th {
+	  position: sticky;
+	  top: 0;
+	  background-color: #333;
+	  color: white;
+	}
+</style>
+</head>
+<body>
+	<h1>Invoke-GPPCSE Report</h1>
+	<div>
+		<h3>GPO Information</h3>
+		<ul>
+			<li>GPP Type: </li>
+			<li>GPP Username: </li>
+			<li>GPP New Username: </li>
+			<li>GPP Password: </li>
+			<li>GPO Path: </li>
+			<li>GPO Name: </li>
+			<li>GPO GUID: </li>
+			<li>GPO Status: </li>
+			<li>GPO Linked OUs:
+				<ul>
+					<li>GPPType: </li>
+					<li>GPPUsername: </li>
+				</ul>
+			 </li>
+			<li>GPO Associated OUs:
+				<ul>
+					<li>GPPType: </li>
+					<li>GPPUsername: </li>
+				</ul>
+			 </li>
+		</ul>
+      <h3>Related Active Computers</h3>
+        <table>
+        <tr>
+    <th>DNS Hostname</th>
+    <th>Operating System</th>
+    <th>Last Logon Timestamp</th>
+    <th>When Created</th>
+    <th>When Changed</th>
+    <th>ServicePrincipalName</th>
+    <th>Computer Type</th>
+  </tr>
+  <tr>
+      <td>DNSHostName</td>
+      <td>OperatingSystem</td>
+      <td>LastLogonTimeStamp</td>
+      <td>WhenCreated</td>
+      <td>WhenChanged</td>
+      <td>ServicePrincipalName</td>
+      <td>ComputerType</td>
+  </tr>
+</table>
+
+	</div>
+<p>&nbsp;</p>
+<div>
+	test
+	</div>
+</body>
+</html>
+
