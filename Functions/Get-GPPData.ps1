@@ -13,14 +13,14 @@ Function Get-GPPData {
             {
                 foreach($User in $GPPXML.Groups.User)
                 {
-                    $Pass = '' | Select-Object Type, Username, NewName, cPassword, Changed
-                    $Pass.Type = 'Groups'
-                    $Pass.Username = $User.Properties.userName
-                    $Pass.NewName = $User.Properties.newName
-                    $Pass.cPassword = $User.Properties.cpassword
-                    $Pass.Changed = [datetime]$User.changed
-                    $Pass
-                    Remove-Variable -Name Pass
+                    [pscustomobject]@{
+                        Type = 'Groups'
+                        Username = $User.Properties.userName
+                        NewName = $User.Properties.newName
+                        cPassword = $User.Properties.cpassword
+                        Changed = [datetime]$User.changed
+                    }
+
                 }
                 Remove-Variable -Name User
             }
@@ -29,56 +29,52 @@ Function Get-GPPData {
         'Services.xml' {
             foreach($Item in ($GPPXML | Select-Xml "/NTServices/NTService/Properties" | Select -ExpandProperty Node))
             {
-                    $Pass = '' | Select-Object Type, Username, NewName, cPassword, Changed
-                    $Pass.Type = 'Services'
-                    $Pass.Username = $Item.accountName
-                    $Pass.NewName = 'n/a'
-                    $Pass.cPassword = $Item.cpassword
-                    $Pass.Changed = [datetime]$Item.ParentNode.changed
-                    $Pass
-                    Remove-Variable -Name Pass
+                    [pscustomobject]@{
+                        Type = 'Services'
+                        Username = $Item.accountName
+                        NewName = 'n/a'
+                        cPassword = $Item.cpassword
+                        Changed = [datetime]$Item.ParentNode.changed
+                    }
             }
         }
         
         'Scheduledtasks.xml' {
             foreach($Item in ($GPPXML | Select-Xml "/ScheduledTasks/Task/Properties" | Select -ExpandProperty Node))
             {
-                    $Pass = '' | Select-Object Type, Username, NewName, cPassword, Changed
-                    $Pass.Type = 'Scheduledtasks'
-                    $Pass.Username = $Item.runAs
-                    $Pass.NewName = 'n/a'
-                    $Pass.cPassword = $Item.cpassword
-                    $Pass.Changed = [datetime]$Item.ParentNode.changed
-                    $Pass
-                    Remove-Variable -Name Pass
+                    [pscustomobject]@{
+                        Type = 'Scheduledtasks'
+                        Username = $Item.runAs
+                        NewName = 'n/a'
+                        cPassword = $Item.cpassword
+                        Changed = [datetime]$Item.ParentNode.changed
+                    }
             }
         }
         
         'DataSources.xml' {
             foreach($Item in ($GPPXML | Select-Xml "/DataSources/DataSource/Properties" | Select -ExpandProperty Node))
             {
-                    $Pass = '' | Select-Object Type, Username, NewName, cPassword, Changed
-                    $Pass.Type = 'DataSources'
-                    $Pass.Username = $Item.username
-                    $Pass.NewName = 'n/a'
-                    $Pass.cPassword = $Item.cpassword
-                    $Pass.Changed = [datetime]$Item.ParentNode.changed
-                    $Pass
-                    Remove-Variable -Name Pass
+                    [pscustomobject]@{
+                        Type = 'DataSources'
+                        Username = $Item.username
+                        NewName = 'n/a'
+                        cPassword = $Item.cpassword
+                        Changed = [datetime]$Item.ParentNode.changed
+                    }
             }                      
         }
   
         'Drives.xml' {
             foreach($Item in ($GPPXML | Select-Xml "/Drives/Drive/Properties" | Select -ExpandProperty Node))
             {
-                    $Pass = '' | Select-Object Type, Username, NewName, cPassword, Changed
-                    $Pass.Type = 'Drives'
-                    $Pass.Username = $Item.userName
-                    $Pass.NewName = 'n/a'
-                    $Pass.cPassword = $Item.cpassword
-                    $Pass.Changed = [datetime]$Item.ParentNode.changed
-                    $Pass
-                    Remove-Variable -Name Pass
+                    [pscustomobject]@{
+                        Type = 'Drives'
+                        Username = $Item.userName
+                        NewName = 'n/a'
+                        cPassword = $Item.cpassword
+                        Changed = [datetime]$Item.ParentNode.changed
+                    }
             }
         }
     }
