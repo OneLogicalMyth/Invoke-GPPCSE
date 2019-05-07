@@ -26,3 +26,9 @@ Running against a remote domain.
 Invoke-GPPCSE -DomainController 192.168.1.1 -Username LowPriv -Password Password1
 ```
 
+You can create a HTML report of the results by doing the following:
+
+```
+$Results = Invoke-GPPCSE
+New-GPPCSEReport -Data $Results | Out-File Report.html
+```
