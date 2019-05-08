@@ -38,3 +38,7 @@ You can create a HTML report of the results by doing the following:
 $Results = Invoke-GPPCSE
 New-GPPCSEReport -Data $Results | Out-File Report.html
 ```
+
+# ToDo
+* Create a C# version
+* Add support for autologon registry keys
