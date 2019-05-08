@@ -8,6 +8,12 @@ First import the module.
 Import-Module .\GPPCSE.psd1
 ```
 
+To make it easier the module is also in a single file.
+
+```
+Import-Module .\Invoke-GPPCSE_Merged.ps1
+```
+
 Running against the local domain.
 
 ```
