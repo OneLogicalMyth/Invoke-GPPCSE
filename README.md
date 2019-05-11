@@ -1,6 +1,8 @@
 # Invoke-GPPCSE
 Obtains a list of GPOs based on known Client Side Extensions (CSE) that normally contain passwords.
 
+You can read about how it works here: https://glanfield.co.uk/make-group-policy-preferences-guid-again/
+
 # Running
 First import the module.
 
